@@ -52,7 +52,11 @@ start_link() ->
 %% supervisor Function Definitions
 %% ------------------------------------------------------------------
 
--dialyzer([{nowarn_function, [init/1]}, no_underspecs]).
+-if(?OTP_RELEASE >= 24).
+-dialyzer({no_underspecs, init/1}).
+-else.
+-dialyzer({nowarn_function, init/1}).
+-endif.
 
 -spec init(InitArgs) -> {ok, {SupFlags, ChildSpecs}}
         when InitArgs :: [],

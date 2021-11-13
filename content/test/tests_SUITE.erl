@@ -19,7 +19,10 @@
 %% DEALINGS IN THE SOFTWARE.
 
 -module({{name}}_tests_SUITE).
+
+-ifndef(NO_CT_SUITE_BEHAVIOUR).
 -behaviour(ct_suite).
+-endif.
 
 -include_lib("stdlib/include/assert.hrl").
 
