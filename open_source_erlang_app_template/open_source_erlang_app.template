@@ -14,6 +14,7 @@
 {template, "content/README.md", "{{name}}/README.md"}.
 {template, "content/rebar.config", "{{name}}/rebar.config"}.
 
+{template, "content/src/api.erl", "{{name}}/src/{{name}}.erl"}.
 {template, "content/src/app.app.src", "{{name}}/src/{{name}}.app.src"}.
 {template, "content/src/app.erl", "{{name}}/src/{{name}}_app.erl"}.
 {template, "content/src/sup.erl", "{{name}}/src/{{name}}_sup.erl"}.
