@@ -1,0 +1,21 @@
+{application, {{name}}, [
+    {description, "FIXME"},
+    {vsn, git},
+    {registered, []},
+    {mod, {{{name}}_app, []}},
+    {applications, [
+        % stdlib deps
+        kernel,
+        stdlib
+        % external deps
+    ]},
+    {modules, []},
+
+    {env, []},
+
+    {licenses, ["MIT"]},
+    {links, [
+        {"GitHub", "https://github.com/g-andrade/{{name}}"},
+        {"GitLab", "https://gitlab.com/g-andrade/{{name}}"}
+    ]}
+]}.
