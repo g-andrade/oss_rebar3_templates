@@ -1,0 +1,25 @@
+% -*- mode: erlang; -*- vim: set ft=erlang:
+
+{description, "Template for modern open-source Erlang lib"}.
+{variables, [
+    {name, "open_source_erlang_lib", "Name for the OTP lib"}
+]}.
+
+{file,     "content/CHANGELOG.md", "{{name}}/CHANGELOG.md"}.
+{file,     "content/.github/workflows/ci.yml", "{{name}}/.github/workflows/ci.yml"}.
+{file,     "content/elvis.config", "{{name}}/elvis.config"}.
+{file,     "content/.gitignore", "{{name}}/.gitignore"}.
+{template, "content/LICENSE.txt", "{{name}}/LICENSE.txt"}.
+{file,     "content/Makefile", "{{name}}/Makefile"}.
+{template, "content/README.md", "{{name}}/README.md"}.
+{template, "content/rebar.config", "{{name}}/rebar.config"}.
+
+{template, "content/src/api.erl", "{{name}}/src/{{name}}.erl"}.
+{template, "content/src/app.app.src", "{{name}}/src/{{name}}.app.src"}.
+
+{template, "content/support/scripts/generate_docs.config", "{{name}}/support/scripts/generate_docs.config"}.
+{template, "content/support/scripts/generate_docs.sh", "{{name}}/support/scripts/generate_docs.sh"}.
+{chmod,    "{{name}}/support/scripts/generate_docs.sh", 8#755}.
+
+{template, "content/test/tests_SUITE.erl", "{{name}}/test/{{name}}_tests_SUITE.erl"}.
+{file,     "content/test/config/sys.config", "{{name}}/test/config/sys.config"}.
