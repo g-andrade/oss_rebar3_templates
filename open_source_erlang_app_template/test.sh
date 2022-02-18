@@ -10,7 +10,7 @@ OUR_DIRECTORY=$(realpath $(dirname "$0"))
 TEMPLATE_ALIAS=$(tr -dc a-z </dev/urandom | head -c 20 ; echo '')
 mkdir -p "$HOME/.config/rebar3/templates"
 ln -s "$OUR_DIRECTORY" "$HOME/.config/rebar3/templates/$TEMPLATE_ALIAS"
-ln -s "$OUR_DIRECTORY/open_source_erlang_app.template" "$OUR_DIRECTORY/$TEMPLATE_ALIAS.template"
+ln -s "$OUR_DIRECTORY/oss_app.template" "$OUR_DIRECTORY/$TEMPLATE_ALIAS.template"
 
 function cleanup {
     rm "$HOME/.config/rebar3/templates/$TEMPLATE_ALIAS"
