@@ -38,10 +38,10 @@ pushd "$TEMPORARY_DIR"
 rebar3 new "$TEMPLATE_ALIAS" foobar
 
 #
-# Confirm tests and checks run
+# Confirm tests, checks and dry docs run
 #
 pushd foobar
-make test check
+make test check doc-dry
 
 popd
 popd

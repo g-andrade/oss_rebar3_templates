@@ -7,7 +7,7 @@ MAKEFLAGS += --no-builtin-rules
 
 ## General Rules
 
-all: compile doc
+all: compile doc-dry
 .PHONY: all
 .NOTPARALLEL: all
 
@@ -61,9 +61,8 @@ shell: export ERL_FLAGS = +pc unicode
 shell:
 	@rebar3 as test shell
 
-doc:
-	./support/scripts/generate_docs.sh
+doc-dry:
+	@rebar3 hex docs --dry-run
 
 publish:
-publish: doc
 	@rebar3 hex publish

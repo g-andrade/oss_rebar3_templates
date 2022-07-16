@@ -19,9 +19,5 @@
 {template, "content/src/app.erl", "{{name}}/src/{{name}}_app.erl"}.
 {template, "content/src/sup.erl", "{{name}}/src/{{name}}_sup.erl"}.
 
-{template, "content/support/scripts/generate_docs.config", "{{name}}/support/scripts/generate_docs.config"}.
-{template, "content/support/scripts/generate_docs.sh", "{{name}}/support/scripts/generate_docs.sh"}.
-{chmod,    "{{name}}/support/scripts/generate_docs.sh", 8#755}.
-
 {template, "content/test/tests_SUITE.erl", "{{name}}/test/{{name}}_tests_SUITE.erl"}.
 {file,     "content/test/config/sys.config", "{{name}}/test/config/sys.config"}.
