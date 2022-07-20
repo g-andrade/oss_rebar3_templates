@@ -23,7 +23,7 @@ check: xref find-unused-code lint dialyzer
 .NOTPARALLEL: check
 .PHONY: check
 
-test: eunit ct
+test: eunit ct cover
 .NOTPARALLEL: test
 .PHONY: test
 
@@ -36,6 +36,10 @@ ct:
 eunit:
 	@rebar3 eunit
 .PHONY: eunit
+
+cover:
+	@rebar3 cover
+.PHONY: cover
 
 ## Checks
 
