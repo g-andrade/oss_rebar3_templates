@@ -15,19 +15,25 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        otp_vsn: [
-            '22.0', '22.1', '22.2', '22.3', 
-            '23.0', '23.1', '23.2', '23.3', 
-            '24.0', '24.1'
-        ]
+        otp_vsn: ['22.3', '23.3', '24.3', '25.0']
         os: [ubuntu-latest]
+        rebar3_vsn: ['3.18', '3.19']
+        exclude:
+          - rebar3_vsn: '3.19'
+            otp_vsn: '22.3'
+          - rebar3_vsn: '3.18'
+            otp_vsn: '23.3'
+          - rebar3_vsn: '3.18'
+            otp_vsn: '24.3'
+          - rebar3_vsn: '3.18'
+            otp_vsn: '25.0'
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
         id: setup-beam
         with:
           otp-version: ${{matrix.otp_vsn}}
-          rebar3-version: '3.17'
+          rebar3-version: ${{matrix.rebar3_vsn}}
       - name: restore _build
         uses: actions/cache@v2
         with:
