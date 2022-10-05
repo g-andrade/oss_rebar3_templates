@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/hexpm/v/{{name}}.svg?style=flat)](https://hex.pm/packages/{{name}})
 [![](https://github.com/g-andrade/{{name}}/workflows/build/badge.svg)](https://github.com/g-andrade/{{name}}/actions?query=workflow%3Abuild)
-[![Erlang Versions](https://img.shields.io/badge/Supported%20Erlang%2FOTP-22.0%20to%2025.0-blue)](https://www.erlang.org)
+[![Erlang Versions](https://img.shields.io/badge/Supported%20Erlang%2FOTP-22%20to%2025-blue)](https://www.erlang.org)
 
 {{name}} allows you to foo and bar, baring the foo and barfooing the foofoo.
 
