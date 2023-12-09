@@ -41,7 +41,7 @@ rebar3 new "$TEMPLATE_ALIAS" foobar
 # Confirm tests, checks and dry docs run
 #
 pushd foobar
-make test check doc-dry
+make test check doc
 
 popd
 popd
