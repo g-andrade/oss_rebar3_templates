@@ -64,9 +64,12 @@ find-unused-code:
 shell: export ERL_FLAGS = +pc unicode
 shell:
 	@rebar3 as test shell
+.PHONY: shell
 
 doc:
 	@rebar3 hex build
+.PHONY: doc
 
 publish:
 	@rebar3 hex publish
+.PHONY: publish
