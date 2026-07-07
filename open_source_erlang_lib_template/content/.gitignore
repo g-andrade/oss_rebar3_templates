@@ -1,5 +1,26 @@
 .rebar3
 _build
+_*
+ebin
+deps
 erl_crash.dump
 log
+logs
 rebar3.crashdump
+.erlang.cookie
+*.beam
+*.plt
+/doc/
+/tmp/
+
+# editors
+*.swp
+*.swo
+.idea
+*.iml
+
+# asdf
+.tool-versions
+
+# claude code
+/.claude/settings.local.json

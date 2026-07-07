@@ -5,14 +5,23 @@
     {name, "open_source_erlang_lib", "Name for the OTP lib"}
 ]}.
 
+{template, "content/AGENTS.md", "{{name}}/AGENTS.md"}.
 {file,     "content/CHANGELOG.md", "{{name}}/CHANGELOG.md"}.
+{file,     "content/CLAUDE.md", "{{name}}/CLAUDE.md"}.
+{file,     "content/.gitattributes", "{{name}}/.gitattributes"}.
+{file,     "content/.git-blame-ignore-revs", "{{name}}/.git-blame-ignore-revs"}.
+{file,     "content/.github/dependabot.yml", "{{name}}/.github/dependabot.yml"}.
 {file,     "content/.github/workflows/ci.yml", "{{name}}/.github/workflows/ci.yml"}.
-{file,     "content/elvis.config", "{{name}}/elvis.config"}.
+{file,     "content/.github/workflows/otp_version_to_rebar3_version.json", "{{name}}/.github/workflows/otp_version_to_rebar3_version.json"}.
 {file,     "content/.gitignore", "{{name}}/.gitignore"}.
+{file,     "content/elvis.config", "{{name}}/elvis.config"}.
+{template, "content/ex_doc.config", "{{name}}/ex_doc.config"}.
 {template, "content/LICENSE.txt", "{{name}}/LICENSE.txt"}.
-{file,     "content/Makefile", "{{name}}/Makefile"}.
+{template, "content/Makefile", "{{name}}/Makefile"}.
 {template, "content/README.md", "{{name}}/README.md"}.
 {template, "content/rebar.config", "{{name}}/rebar.config"}.
+{file,     "content/rebar.config.script", "{{name}}/rebar.config.script"}.
+{file,     "content/shell.config", "{{name}}/shell.config"}.
 
 {template, "content/src/api.erl", "{{name}}/src/{{name}}.erl"}.
 {template, "content/src/app.app.src", "{{name}}/src/{{name}}.app.src"}.
