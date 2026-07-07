@@ -20,6 +20,10 @@
 
 -module({{name}}).
 
+-ifdef(E48).
+-moduledoc "FIXME: one-line summary of the `{{name}}` public API.".
+-endif.
+
 %% ------------------------------------------------------------------
 %% API Function Exports
 %% ------------------------------------------------------------------
@@ -34,7 +38,23 @@
 %% API Function Definitions
 %% ------------------------------------------------------------------
 
+% Documented public API functions follow the pattern below. Doc attributes are
+% guarded by `-ifdef(E48)` so the source still compiles on OTP < 27, which lacks
+% EEP-48 `-doc`/`-moduledoc`. Hide internals with `-doc false` / `-moduledoc
+% false` (NOT `@private`, which ex_doc ignores). A public function that isn't
+% called internally needs `-ignore_xref/1` to satisfy the `exports_not_used`
+% xref check.
+%
+%     -export([add/2]).
+%     -ignore_xref([add/2]).
+%
+%     -ifdef(E48).
+%     -doc "Adds two integers.".
+%     -endif.
+%     -spec add(integer(), integer()) -> integer().
+%     add(A, B) ->
+%         A + B.
+
 %% ------------------------------------------------------------------
 %% Internal Function Definitions
 %% ------------------------------------------------------------------
-

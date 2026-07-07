@@ -19,10 +19,7 @@
 %% DEALINGS IN THE SOFTWARE.
 
 -module({{name}}_tests_SUITE).
-
--ifndef(NO_CT_SUITE_BEHAVIOUR).
 -behaviour(ct_suite).
--endif.
 
 -include_lib("stdlib/include/assert.hrl").
 
@@ -30,28 +27,25 @@
 %% ct_suite Function Exports
 %% ------------------------------------------------------------------
 
--export([all/0,
-         groups/0,
-         init_per_suite/1,
-         end_per_suite/1,
-         init_per_group/2,
-         end_per_group/2,
-         init_per_testcase/2,
-         end_per_testcase/2]).
+-export([
+    all/0,
+    groups/0,
+    init_per_suite/1,
+    end_per_suite/1,
+    init_per_group/2,
+    end_per_group/2,
+    init_per_testcase/2,
+    end_per_testcase/2
+]).
 
 %% ------------------------------------------------------------------
 %% Test Case Function Exports
 %% ------------------------------------------------------------------
 
--export([two_plus_two_is_four/1,
-         two_minus_two_is_zero/1]).
-%
-%
-%-hank([
-%    {unnecessary_function_arguments, [
-%        {end_per_suite, 1},
-%        {init_per_group, 1},
-%
+-export([
+    two_plus_two_is_four/1,
+    two_minus_two_is_zero/1
+]).
 
 %% ------------------------------------------------------------------
 %% ct_suite Function Definitions
@@ -61,12 +55,16 @@ all() ->
     [{group, GroupName} || {GroupName, _Options, _TestCases} <- groups()].
 
 groups() ->
-    [{_Name = tests,
-      _Opts = [parallel],
-      _TestCases = [
-            two_plus_two_is_four,
-            two_minus_two_is_zero
-    ]}].
+    [
+        {
+            _Name = tests,
+            _Opts = [parallel],
+            _TestCases = [
+                two_plus_two_is_four,
+                two_minus_two_is_zero
+            ]
+        }
+    ].
 
 init_per_suite(Config) ->
     Config.

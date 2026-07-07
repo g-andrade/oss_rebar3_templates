@@ -18,16 +18,22 @@
 %% FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 %% DEALINGS IN THE SOFTWARE.
 
-%% @private
 -module({{name}}_app).
+
+-ifdef(E48).
+-moduledoc false.
+-endif.
+
 -behaviour(application).
 
 %% ------------------------------------------------------------------
 %% application Function Exports
 %% ------------------------------------------------------------------
 
--export([start/2,
-         stop/1]).
+-export([
+    start/2,
+    stop/1
+]).
 
 %% ------------------------------------------------------------------
 %% application Function Definitions

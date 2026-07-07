@@ -18,8 +18,12 @@
 %% FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 %% DEALINGS IN THE SOFTWARE.
 
-%% @private
 -module({{name}}_sup).
+
+-ifdef(E48).
+-moduledoc false.
+-endif.
+
 -behaviour(supervisor).
 
 %% ------------------------------------------------------------------
@@ -58,10 +62,10 @@ start_link() ->
 -dialyzer({nowarn_function, init/1}).
 -endif.
 
--spec init(InitArgs) -> {ok, {SupFlags, ChildSpecs}}
-        when InitArgs :: [],
-             SupFlags :: supervisor:sup_flags(),
-             ChildSpecs :: [supervisor:child_spec()].
+-spec init(InitArgs) -> {ok, {SupFlags, ChildSpecs}} when
+    InitArgs :: [],
+    SupFlags :: supervisor:sup_flags(),
+    ChildSpecs :: [supervisor:child_spec()].
 init([]) ->
     SupFlags = sup_flags(),
     ChildSpecs = child_specs(),
@@ -72,9 +76,11 @@ init([]) ->
 %% ------------------------------------------------------------------
 
 sup_flags() ->
-    #{ strategy => one_for_one,
-       intensity => 5,
-       period => 1 }.
+    #{
+        strategy => one_for_one,
+        intensity => 5,
+        period => 1
+    }.
 
 child_specs() ->
     [].
