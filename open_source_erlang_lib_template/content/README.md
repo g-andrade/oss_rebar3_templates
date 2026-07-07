@@ -1,8 +1,8 @@
 # {{name}}
 
 [![](https://img.shields.io/hexpm/v/{{name}}.svg?style=flat)](https://hex.pm/packages/{{name}})
-[![](https://github.com/g-andrade/{{name}}/workflows/build/badge.svg)](https://github.com/g-andrade/{{name}}/actions?query=workflow%3Abuild)
-[![Erlang Versions](https://img.shields.io/badge/Supported%20Erlang%2FOTP-22%20to%2026-blue)](https://www.erlang.org)
+[![](https://github.com/g-andrade/{{name}}/actions/workflows/ci.yml/badge.svg)](https://github.com/g-andrade/{{name}}/actions/workflows/ci.yml)
+[![Erlang Versions](https://img.shields.io/badge/Supported%20Erlang%2FOTP-24%20to%2029-blue)](https://www.erlang.org)
 
 {{name}} allows you to foo and bar, baring the foo and barfooing the foofoo.
 
