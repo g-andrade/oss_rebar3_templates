@@ -42,7 +42,7 @@ begin
             CONFIG
     catch
         error:badarg ->
-            logger:warning("Don't now how to compare to OTP release: ~tp", [OtpRelease]),
+            logger:warning("Don't know how to compare to OTP release: ~tp", [OtpRelease]),
             CONFIG
     end
 end.

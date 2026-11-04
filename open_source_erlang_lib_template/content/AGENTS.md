@@ -51,8 +51,9 @@ Docs are EEP-48 native, rendered by the standalone `ex_doc` escript (not the
 
 `rebar.config.script` drops dev-only plugins on old OTP releases:
 `erlfmt` + `rebar3_hank` + `rebar3_lint` on OTP ≤ 25, and `erlfmt` alone on
-OTP 26 (its `-doc` triple-quoted strings break erlfmt/katana there). Whenever the
-gated plugin set changes, bump the `_build` cache prefix in `.github/workflows/ci.yml`.
+OTP 26 (its `-doc` triple-quoted strings break erlfmt/katana there). Whenever
+plugin versions or the gated plugin set change, bump the `_build` cache prefix in
+`.github/workflows/ci.yml`, or a restored `_build` keeps running stale plugins.
 
 ## Releasing
 

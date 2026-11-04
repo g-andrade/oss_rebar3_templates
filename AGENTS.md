@@ -66,12 +66,15 @@ OTP 24–29 CI, and generated projects default to the `main` branch.
   entry in `.app.src`. Change both.
 
 - **Bump the CI `_build` cache prefix** (`_build-cache1-…` → `-cache2-…`)
-  whenever the OTP-gated plugin set in `rebar.config.script` changes, or a
-  removed plugin's cached beams can resurface.
+  whenever plugin versions or the OTP-gated plugin set in `rebar.config.script`
+  change: a restored `_build` otherwise keeps running outdated (or removed)
+  plugins.
 
 ## Version pins to keep current
 
 Bump against the reference libs when refreshing: erlfmt `~> 1.7`, `rebar3_hank`
-`~> 1.6`, `rebar3_hex` `~> 7.1`, `rebar3_lint` `~> 5.0`, ex_doc escript `0.40.2`,
-OTP CI matrix `24.3 25.3 26.2 27.3 28.5 29.0` (+ the `otp_version_to_rebar3_version.json`
-map). Note these live in this repo's own docs too — grep before trusting them.
+`~> 2.0`, `rebar3_hex` `~> 7.1`, `rebar3_lint` `~> 6.0`, ex_doc escript `0.40.4`
+(must ship an `ex_doc_otp_<N>` escript for every OTP the docs are built on),
+OTP CI matrix of majors only, `24 25 26 27 28 29` — setup-beam resolves each to
+its latest release — with the `otp_version_to_rebar3_version.json` map keyed the
+same way. Note these live in this repo's own docs too — grep before trusting them.
